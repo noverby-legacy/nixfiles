@@ -25,6 +25,7 @@
     gm = "git merge";
     gs = "git status";
     gsh = "git stash";
+    gsha = "git stash apply";
     gsw = "git switch";
     gundo = "git reset HEAD~1 --soft";
     gbm = "gh pr comment --body 'bors merge'";
