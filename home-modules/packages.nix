@@ -13,7 +13,6 @@
     evince
     spotify
     protonmail-bridge
-    chromium
     mpv
     libreoffice
     gnome-tweaks

@@ -210,6 +210,51 @@ in {
       };
     };
 
+    chromium = {
+      enable = true;
+      commandLineArgs = [
+        "--enable-features=UseOzonePlatform,TouchpadOverscrollHistoryNavigation"
+        "--ozone-platform=wayland"
+      ];
+      package = pkgs.ungoogled-chromium;
+      # TODO:
+      # - https://github.com/bpc-clone/bypass-paywalls-chrome-clean
+      extensions = map (id: {inherit id;}) [
+        # UBlock
+        "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+        # Bitwarden
+        "nngceckbapebfimnlniiiahkandclblb"
+        # Kagi
+        "cdglnehniifkbagbbombnjghhcihifij"
+        # Leechblock
+        "blaaajhemilngeeffpbfkdjjoefldkok"
+        # Dark Reader
+        "eimadpbcbfnmbkopoojfekhnkhdbieeh"
+        # News Feed Eradicator
+        "fjcldmjmjhkklehbacihaiopjklihlgg"
+        # Momentum
+        "laookkfknpbbblfpciffpaejjkokdgca"
+        # Language Tool
+        "oldceeleldhonbafppcapldpdifcinji"
+        # Consent-O-Matic
+        "mdjildafknihdffpkfmmpnpoiajfjnjd"
+        # Read on reMarkable
+        "bfhkfdnddlhfippjbflipboognpdpoeh"
+        # Copyfish
+        "eenjdnjldapjajjofmldgmkjaienebbj"
+        # Video Speed Controller
+        "nffaoalbilbmmfgbnbgppjihopabppdk"
+        # Social Fixer for Facebook
+        "ifmhoabcaeehkljcfclfiieohkohdgbb"
+        # Neat URL
+        "jchobbjgibcahbheicfocecmhocglkco"
+        # Graze
+        "epocinhmkcnjfjobnglchpbncndobblj"
+        # Distil
+        "inlikjemeeknofckkjolnjbpehgadgge"
+      ];
+    };
+
     obs-studio = {
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [
