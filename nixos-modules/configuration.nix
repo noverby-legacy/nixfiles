@@ -137,8 +137,23 @@
       SYSTEMD_PAGERSECURE = "1";
     };
   };
-  # Run unpatched binaries
-  programs.nix-ld.enable = true;
+  programs = {
+    # Run unpatched binaries
+    nix-ld.enable = true;
+    # Unbraved Brave
+    # https://github.com/MulesGaming/brave-debullshitinator
+    chromium = {
+      enable = true;
+      extraOpts = {
+        BraveRewardsDisabled = true;
+        BraveWalletDisabled = true;
+        BraveVPNDisabled = 1;
+        BraveAIChatEnabled = false;
+        IPFSEnabled = false;
+        PasswordManagerEnabled = false;
+      };
+    };
+  };
 
   # Users
   environment.profiles = ["$HOME/.local"];

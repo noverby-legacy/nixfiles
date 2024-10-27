@@ -210,18 +210,17 @@ in {
       };
     };
 
+    # Unbraved Brave
     chromium = {
       enable = true;
       commandLineArgs = [
         "--enable-features=UseOzonePlatform,TouchpadOverscrollHistoryNavigation"
         "--ozone-platform=wayland"
       ];
-      package = pkgs.ungoogled-chromium;
+      package = pkgs.brave;
       # TODO:
       # - https://github.com/bpc-clone/bypass-paywalls-chrome-clean
       extensions = map (id: {inherit id;}) [
-        # UBlock
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm"
         # Bitwarden
         "nngceckbapebfimnlniiiahkandclblb"
         # Kagi
